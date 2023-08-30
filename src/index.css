@@ -11,3 +11,11 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
 }
+
+* {
+	line-height: 1.6;
+}
+
+.link {
+	text-decoration: none;
+}

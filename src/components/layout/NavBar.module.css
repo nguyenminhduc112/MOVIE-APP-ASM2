@@ -1,0 +1,26 @@
+.navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 0px 15px;
+    z-index: 10000;
+}
+
+.navBar.active {
+    background-color: #000000;
+}
+
+.title {
+    color: rgb(226, 15, 15);
+    cursor: pointer;
+}
+
+.icon {
+    width: 25px;
+    cursor: pointer;
+}

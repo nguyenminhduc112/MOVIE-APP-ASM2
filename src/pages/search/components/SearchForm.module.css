@@ -1,0 +1,76 @@
+.container {
+    width: 100%;
+    height: 40vh;
+    background-color: #0F0E0C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    width: 960px;
+    min-height: 100px;
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.groupInput {
+    position: relative;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    margin-bottom: 40px;
+    border-bottom: 4px solid #00BBEC;
+}
+
+.icon {
+    position: absolute;
+    width: 26px;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input {
+    width: 80%;
+    height: 50px;
+    font-size: 18px;
+    padding-left: 15px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+
+.actions {
+    padding-bottom: 40px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btnReset,
+.btnSearch {
+    font-size: 18px;
+    margin-left: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.btnReset:hover,
+.btnSearch:hover {
+    opacity: 0.8;
+}
+
+.btnReset {
+    background-color: transparent;
+    order: 1;
+}
+
+.btnSearch {
+    background-color: #00BBEC;
+    color: #fff;
+    order: 2;
+}
