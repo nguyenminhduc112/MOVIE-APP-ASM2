@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import {
 	BrowserRouter,
 	Routes,
@@ -6,7 +6,8 @@ import {
 } from "react-router-dom";
 
 import Browse from './pages/browse/Browse';
-import Search from './pages/search/Search';
+const Search = lazy(() => import('./pages/search/Search'))
+
 const url = 'https://api.themoviedb.org/3/'
 const API_KEY = '6bc3178e1acbf3f2153a677b08af6bb6'
 const requests = {
@@ -26,7 +27,7 @@ function App() {
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<Browse requests={requests} />} />
-				<Route path="/search" element={<Search fetchSearch={requests.fetchSearch} />} />
+				<Route path="/search" element={<Suspense fallback={<p>Loading...</p>}><Search fetchSearch={requests.fetchSearch} /></Suspense>} />
 			</Routes>
 		</BrowserRouter>
 	);

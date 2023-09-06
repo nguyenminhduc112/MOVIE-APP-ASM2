@@ -1,6 +1,7 @@
 .banner {
     width: 100%;
     position: relative;
+
 }
 
 .banner_img {
@@ -42,4 +43,9 @@
 .banner_text {
     color: #fff;
     text-shadow: 2px 2px 2px #000;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
 }

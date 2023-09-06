@@ -1,8 +1,9 @@
-import React, { useCallback, useEffect, useMemo, useReducer, useState } from 'react'
+import React, { Suspense, lazy, useCallback, useEffect, useMemo, useReducer, useState } from 'react'
 import styles from './MovieList.module.css'
 import useHttp from '../../hooks/use-http'
 import MovieItem from './MovieItem'
-import MovieDetail from './MovieDetail'
+
+const MovieDetail = lazy(() => import('./MovieDetail'))
 
 const MovieList = ({ size, title = '', wrap = false, urlFetch }) => {
     const { isLoading: isLoadingMovies, error: errorMovies, sendRequest: requestMovies } = useHttp()
@@ -41,7 +42,6 @@ const MovieList = ({ size, title = '', wrap = false, urlFetch }) => {
 
     // Xử lý khi click vào phim
     const handlerDetailMovie = useCallback((movieID) => {
-        console.log(movieID)
         const handlerReuqestMovie = (data) => {
             const dataMovie = data.results.filter((movie) => (movie.site === 'YouTube') && (movie.type === 'Trailer' || movie.type === 'Teaser'))
             dispatchDetailMovie({ id: movieID, movies: dataMovie })
@@ -59,7 +59,7 @@ const MovieList = ({ size, title = '', wrap = false, urlFetch }) => {
     const movieDetailRender = useMemo(() => {
         const result = detailMovie.movies.length > 0 ? detailMovie.movies.find(movie => (movie.site === 'YouTube') && (movie.type === 'Trailer' || movie.type === 'Teaser')) : { key: null }
 
-        return result && <MovieDetail keyVideo={result.key} idMovie={detailMovie.idMovie} />
+        return result && <Suspense fallback={<p>Loading...</p>}><MovieDetail keyVideo={result.key} idMovie={detailMovie.idMovie} /></Suspense>
     }, [detailMovie.movies])
 
     return (
