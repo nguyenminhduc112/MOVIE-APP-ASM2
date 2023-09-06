@@ -1,7 +1,7 @@
 {
   "name": "react-clone",
   "version": "0.1.0",
-  "homepage": "https://nguyenminhduc112.github.io/MOVIE-APP-ASM2",
+  "homepage": "https://nguyenminhduc112.github.io/MOVIE-APP-ASM2/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -39,7 +39,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.0.0",
-    "react-error-overlay": "^6.0.9"
+    "gh-pages": "^6.0.0"
   }
 }
