@@ -1,7 +1,7 @@
 {
+  "homepage": "https://nguyenminhduc112.github.io/MOVIE-APP-ASM2/",
   "name": "react-clone",
   "version": "0.1.0",
-  "homepage": "https://nguyenminhduc112.github.io/MOVIE-APP-ASM2/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
