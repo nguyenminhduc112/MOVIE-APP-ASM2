@@ -8,7 +8,7 @@ import {
 import Browse from './pages/browse/Browse';
 const Search = lazy(() => import('./pages/search/Search'))
 
-const url = 'https://api.themoviedb.org/3/'
+const url = 'https://api.themoviedb.org/3'
 const API_KEY = '6bc3178e1acbf3f2153a677b08af6bb6'
 const requests = {
 	fetchTrending: `${url}/trending/all/week?api_key=${API_KEY}&language=en-US`,
